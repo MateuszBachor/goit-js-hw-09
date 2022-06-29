@@ -24,7 +24,7 @@ const options = {
 
          function countDown(){
             startBtn.disabled = true;
-           timer = setInterval(() => {
+           setInterval(() => {
             let dateChosen = datetimePicker.getAttribute("value")
             dateChosen = new Date(dateChosen)
             let now = new Date()
