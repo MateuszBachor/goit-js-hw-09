@@ -24,10 +24,12 @@ const options = {
 
          function countDown(){
             startBtn.disabled = true;
-           setInterval(() => {
-            let dateChosen = datetimePicker.getAttribute("value")
-            dateChosen = new Date(dateChosen)
+           const interval = setInterval(() => {
+           datetimePicker.getAttribute("value")
+            dateChosen = new Date(datetimePicker.value)
             let now = new Date()
+            console.log(now)
+            console.log(dateChosen)
             let diff = dateChosen - now;
            const d = Math.floor(diff / 1000 / 60 / 60 / 24);
            const h = Math.floor(diff / 1000 / 60 / 60) % 24;
@@ -39,7 +41,7 @@ const options = {
            minutes.innerHTML = m < 10 ? '0' + m : m;
            seconds.innerHTML = s < 10 ? '0' + s : s;
          if (diff < 1000) {
-            clearInterval(timer);
+            clearInterval(interval);
             startBtn.disabled = false;
           }
         }, 1000);
