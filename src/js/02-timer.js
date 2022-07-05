@@ -26,7 +26,7 @@ const options = {
             startBtn.disabled = true;
            const interval = setInterval(() => {
            datetimePicker.getAttribute("value")
-            dateChosen = new Date(datetimePicker.value)
+           const  dateChosen = new Date(datetimePicker.value)
             let now = new Date()
             console.log(now)
             console.log(dateChosen)
